@@ -16,6 +16,8 @@ function onReady (){
 
   appendPictures();
   nameGenerator();
+
+  $('.container').on('click', '.pic-div', clickedPic);
 } //end onReady function
 
 // appendPictures function to add pictures to the DOM
@@ -39,4 +41,11 @@ function nameGenerator (){
 // random number generator
 function randomNumber (min ,max) {
   return Math.floor(Math.random() * (1 + max - min) + min);
+}
+
+// add clickedPic function
+function clickedPic () {
+  console.log('clicked picture');
+  var thisName = $(this).children().data('name');
+  console.log(thisName);
 }
